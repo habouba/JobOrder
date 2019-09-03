@@ -1,0 +1,62 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOrder.Api", "JobOrder.Api\JobOrder.Api.csproj", "{4578B260-A6ED-44BB-9D56-8BE4BC200C06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6332F229-D1A8-4B85-868E-F1293A7117AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{03064307-CC99-4819-A21C-C9524A8F021F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B4A616AD-199D-4BA8-AE9A-153566B18E11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOrder.Application", "JobOrder.Application\JobOrder.Application.csproj", "{5AF13F0B-BA78-4688-A286-E648DD49F97E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOrder.Domain", "JobOrder.Domain\JobOrder.Domain.csproj", "{262A41EF-51FE-464C-9EB9-1D6C0B59A665}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3EB82713-49E1-49A5-A812-B4A357AFAE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOrder.Infrastructure", "JobOrder.Infrastructure\JobOrder.Infrastructure.csproj", "{E0CB4DCE-C9B7-436E-8C82-10F25A737F07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{AAC0BBD0-06A5-4E75-8B90-1915B7B4F441}"
+	ProjectSection(SolutionItems) = preProject
+		CustomWebApplicationFactory.cs = CustomWebApplicationFactory.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOrder.FunctionalTests", "JobOrder.FunctionalTests\JobOrder.FunctionalTests.csproj", "{83A469C9-9A02-420F-910B-41A4C585AA24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4578B260-A6ED-44BB-9D56-8BE4BC200C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4578B260-A6ED-44BB-9D56-8BE4BC200C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4578B260-A6ED-44BB-9D56-8BE4BC200C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4578B260-A6ED-44BB-9D56-8BE4BC200C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF13F0B-BA78-4688-A286-E648DD49F97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF13F0B-BA78-4688-A286-E648DD49F97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF13F0B-BA78-4688-A286-E648DD49F97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF13F0B-BA78-4688-A286-E648DD49F97E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262A41EF-51FE-464C-9EB9-1D6C0B59A665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262A41EF-51FE-464C-9EB9-1D6C0B59A665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262A41EF-51FE-464C-9EB9-1D6C0B59A665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262A41EF-51FE-464C-9EB9-1D6C0B59A665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0CB4DCE-C9B7-436E-8C82-10F25A737F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0CB4DCE-C9B7-436E-8C82-10F25A737F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0CB4DCE-C9B7-436E-8C82-10F25A737F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0CB4DCE-C9B7-436E-8C82-10F25A737F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A469C9-9A02-420F-910B-41A4C585AA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A469C9-9A02-420F-910B-41A4C585AA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A469C9-9A02-420F-910B-41A4C585AA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A469C9-9A02-420F-910B-41A4C585AA24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4578B260-A6ED-44BB-9D56-8BE4BC200C06} = {6332F229-D1A8-4B85-868E-F1293A7117AA}
+		{5AF13F0B-BA78-4688-A286-E648DD49F97E} = {03064307-CC99-4819-A21C-C9524A8F021F}
+		{262A41EF-51FE-464C-9EB9-1D6C0B59A665} = {03064307-CC99-4819-A21C-C9524A8F021F}
+		{E0CB4DCE-C9B7-436E-8C82-10F25A737F07} = {3EB82713-49E1-49A5-A812-B4A357AFAE18}
+		{AAC0BBD0-06A5-4E75-8B90-1915B7B4F441} = {B4A616AD-199D-4BA8-AE9A-153566B18E11}
+		{83A469C9-9A02-420F-910B-41A4C585AA24} = {B4A616AD-199D-4BA8-AE9A-153566B18E11}
+	EndGlobalSection
+EndGlobal
