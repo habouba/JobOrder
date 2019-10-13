@@ -7,8 +7,8 @@ using System;
 
 namespace JobOrder.Application.JobOrders.Commands.CreateJobOrder
 {
-    public class CreateJobOrderCommandHandler : IRequestHandler<CreateJobOrderCommand, int>
-    {
+    public class CreateJobOrderCommandHandler : IRequestHandler<ContextualRequest<CreateJobOrderCommand, int>, int>
+  {
         private readonly IMediator _mediator;
 
         public CreateJobOrderCommandHandler(IMediator mediator)
@@ -17,20 +17,21 @@ namespace JobOrder.Application.JobOrders.Commands.CreateJobOrder
         }
 
 
-        public async Task<int> Handle(CreateJobOrderCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(ContextualRequest<CreateJobOrderCommand, int>  request, CancellationToken cancellationToken)
         {
+            var requestData = request.Data;
             var entity = new JobOrderEntity
             {
               JobOrderId = 12345,
-              Address = request.Address,
-              City = request.City,
-              CompanyName = request.CompanyName,
-              ContactName = request.ContactName,
-              ContactTitle = request.ContactTitle,
-              Country = request.Country,
-              Fax = request.Fax,
-              Phone = request.Phone,
-              PostalCode = request.PostalCode
+              Address = requestData.Address,
+              City = requestData.City,
+              CompanyName = requestData.CompanyName,
+              ContactName = requestData.ContactName,
+              ContactTitle = requestData.ContactTitle,
+              Country = requestData.Country,
+              Fax = requestData.Fax,
+              Phone = requestData.Phone,
+              PostalCode = requestData.PostalCode
             };
 
 
