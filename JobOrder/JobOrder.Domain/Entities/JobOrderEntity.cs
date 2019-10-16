@@ -1,18 +1,24 @@
 using System;
 namespace JobOrder.Domain.Entities
 {
-  public class JobOrderEntity
+  public class JobOrderEntity : Entity, IAggregateRoot
   {
-    public int JobOrderId { get; set; }
-    public string CompanyName { get; set; }
-    public string ContactName { get; set; }
-    public string ContactTitle { get; set; }
-    public string Address { get; set; }
-    public string City { get; set; }
-    public string Region { get; set; }
-    public string PostalCode { get; set; }
-    public string Country { get; set; }
-    public string Phone { get; set; }
-    public string Fax { get; set; }
+    public JobOrderId JobOrderId { get; private set; }
+    public string CompanyName { get; private set; }
+    public string ContactTitle { get; private set; }
+    public string Address { get; private set; }
+    public string Phone { get; private set; }
+
+    public  JobOrderEntity(string companyName, string contactTitle, string address, string phone)
+    {
+      JobOrderId = new JobOrderId(Guid.NewGuid());
+      CompanyName = companyName;
+      ContactTitle = contactTitle;
+      Address = address;
+      Phone = phone;
+
+      this.AddDomainEvent(new JobOrderRegisteredEvent(this));
+    }
   }
 }
+

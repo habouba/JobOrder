@@ -7,7 +7,7 @@ using System;
 
 namespace JobOrder.Application.JobOrders.Commands.CreateJobOrder
 {
-    public class CreateJobOrderCommandHandler : IRequestHandler<ContextualRequest<CreateJobOrderCommand, int>, int>
+    public class CreateJobOrderCommandHandler : IRequestHandler<ContextualRequest<CreateJobOrderCommand, Guid>, Guid>
   {
         private readonly IMediator _mediator;
 
@@ -16,30 +16,19 @@ namespace JobOrder.Application.JobOrders.Commands.CreateJobOrder
           _mediator = mediator;
         }
 
-
-        public async Task<int> Handle(ContextualRequest<CreateJobOrderCommand, int>  request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(ContextualRequest<CreateJobOrderCommand, Guid>  request, CancellationToken cancellationToken)
         {
             var requestData = request.Data;
-            var entity = new JobOrderEntity
-            {
-              JobOrderId = 12345,
-              Address = requestData.Address,
-              City = requestData.City,
-              CompanyName = requestData.CompanyName,
-              ContactName = requestData.ContactName,
-              ContactTitle = requestData.ContactTitle,
-              Country = requestData.Country,
-              Fax = requestData.Fax,
-              Phone = requestData.Phone,
-              PostalCode = requestData.PostalCode
-            };
 
+            var entity = new JobOrderEntity(
+              requestData.CompanyName,
+              requestData.ContactTitle,
+              requestData.Address,
+              requestData.Phone);
+            
+            await _mediator.Publish(new JobOrderCreated { JobOrderId = entity.JobOrderId.Value }, cancellationToken);
 
-      //await _context.SaveChangesAsync(cancellationToken);
-      
-      await _mediator.Publish(new JobOrderCreated { JobOrderId = entity.JobOrderId }, cancellationToken);
-
-      return entity.JobOrderId;
+            return entity.JobOrderId.Value;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace JobOrder.Application.JobOrders.Queries.GetJobOrder
       {
         return jobOrder => new JobOrderViewModel
         {
-          JobOrderId = jobOrder.JobOrderId,
+          /*JobOrderId = jobOrder.JobOrderId.Value,
           Address = jobOrder.Address,
           City = jobOrder.City,
           CompanyName = jobOrder.CompanyName,
@@ -36,7 +36,7 @@ namespace JobOrder.Application.JobOrders.Queries.GetJobOrder
           Fax = jobOrder.Fax,
           Phone = jobOrder.Phone,
           PostalCode = jobOrder.PostalCode,
-          Region = jobOrder.Region
+          Region = jobOrder.Region*/
         };
       }
     }

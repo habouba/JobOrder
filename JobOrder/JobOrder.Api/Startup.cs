@@ -20,6 +20,7 @@ using System.Reflection;
 using JobOrder.Api.Filters;
 using JobOrder.Infrastructure;
 using JobOrder.Application.Infrastructure.AutoMapper;
+using JobOrder.Domain;
 
 namespace JobOrder.Api
 {
@@ -41,13 +42,11 @@ namespace JobOrder.Api
       // Add framework services.
       services.AddTransient<INotificationService, NotificationService>();
 
-
       // Add MediatR
       services.AddMediatR(typeof(GetJobOrderQueryHandler).GetTypeInfo().Assembly);
+      services.AddMediatR(typeof(JobOrderCreatedHandler).GetTypeInfo().Assembly);
       services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
       services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-
-      
 
       services
           .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))

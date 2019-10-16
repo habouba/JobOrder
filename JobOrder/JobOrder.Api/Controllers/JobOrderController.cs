@@ -6,6 +6,7 @@ using JobOrder.Application.JobOrders.Queries.GetAllJobOrders;
 using JobOrder.Application.JobOrders.Queries.GetJobOrder;
 using Microsoft.AspNetCore.Http;
 using JobOrder.Application.JobOrders;
+using System;
 
 namespace JobOrder.Api.Controllers
 {
@@ -33,9 +34,9 @@ namespace JobOrder.Api.Controllers
     [ProducesDefaultResponseType]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public async Task<ActionResult<int>> Create([FromBody] CreateJobOrderCommand command)
+    public async Task<ActionResult<Guid>> Create([FromBody] CreateJobOrderCommand command)
     {
-      var request = new ContextualRequest<CreateJobOrderCommand, int> (command, "habib");
+      var request = new ContextualRequest<CreateJobOrderCommand, Guid> (command, "userId");
       var JobOrderId = await Mediator.Send(request);
 
       return Ok(JobOrderId);

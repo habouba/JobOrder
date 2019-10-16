@@ -7,4 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\JobOrder.Application\JobOrder.Application.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="7.0.0" />
+  </ItemGroup>
 </Project>

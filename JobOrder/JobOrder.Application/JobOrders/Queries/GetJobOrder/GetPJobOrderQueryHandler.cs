@@ -38,8 +38,9 @@ namespace JobOrder.Application.JobOrders.Queries.GetJobOrder
       return jobOrder;*/
       //var jobOrder = new JobOrderViewModel() { JobOrderId = 1234556, CompanyName = "test" };
       //return jobOrder;
-      var entity = new JobOrderEntity { JobOrderId = 1234556, CompanyName = "test" };
-      return await Task.FromResult(JobOrderViewModel.Create(entity));
-        }
+      //var entity = new JobOrderEntity { JobOrderId = 1234556, CompanyName = "test" };
+      //return await Task.FromResult(JobOrderViewModel.Create(entity));
+      return await Task.FromResult(new JobOrderViewModel());
+    }
     }
 }

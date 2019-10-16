@@ -1,11 +1,14 @@
-﻿using FluentValidation;
+﻿using System;
+using FluentValidation;
 
 namespace JobOrder.Application.JobOrders.Commands.CreateJobOrder
 {
-    public class CreateJobOrderCommandValidator : AbstractValidator<CreateJobOrderCommand>
+    public class CreateJobOrderCommandValidator : AbstractValidator<ContextualRequest<CreateJobOrderCommand, Guid>>
     {
         public CreateJobOrderCommandValidator()
         {
+            RuleFor(x => x.Data.CompanyName).Length(5).NotEmpty();
+
             /*RuleFor(x => x.Id).Length(5).NotEmpty();
             RuleFor(x => x.Address).MaximumLength(60);
             RuleFor(x => x.City).MaximumLength(15);
