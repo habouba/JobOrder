@@ -1,14 +1,23 @@
 using System;
-using JobOrder.Domain.Entities;
 
 namespace JobOrder.Domain
 {
-  public class JobOrderRegisteredEvent : DomainEventBase
+  public class JobOrderRegisteredEvent : DomainEvent
   {
-    public JobOrderEntity JobOrderEntity { get; }
-    public JobOrderRegisteredEvent(JobOrderEntity jobOrder)
+    public Guid JobOrderId { get; private set; }
+    public string CompanyName { get; private set; }
+    public string ContactTitle { get; private set; }
+    public string Address { get; private set; }
+    public string Phone { get; private set; }
+
+
+    public JobOrderRegisteredEvent(Guid jobOrderId, string companyName, string contactTitle, string address, string phone)
     {
-        this.JobOrderEntity = jobOrder;
+      JobOrderId = jobOrderId;
+      CompanyName = companyName;
+      ContactTitle = contactTitle;
+      Address = address;
+      Phone = phone;
     }
   }
 }

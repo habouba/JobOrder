@@ -23,7 +23,7 @@ namespace JobOrder.FunctionalTests.Controllers.JobOrder
         var command = new CreateJobOrderCommand
         {
           CompanyName = "Coffee",
-          ContactName = "Bibo",
+          ContactTitle = "Bibo",
           Address = "Address"
         };
 
